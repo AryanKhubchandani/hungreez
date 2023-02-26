@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "658601805797",
+    "project_id": "hungreez-60aa9",
+    "storage_bucket": "hungreez-60aa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658601805797:android:8f02f9bce831134b34910c",
+        "android_client_info": {
+          "package_name": "com.example.hungreez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658601805797-1i6v0cjsfq4kukj1pspf1f80c9dk0qh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvGv-gTD4sxcxomlovMyzmiNJCA6WX938"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658601805797-1i6v0cjsfq4kukj1pspf1f80c9dk0qh4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

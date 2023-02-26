@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>658601805797-u0g4i4a331nq9c8etv9pabir371bk8o6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.658601805797-u0g4i4a331nq9c8etv9pabir371bk8o6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCVZEK4agtdoZKzlkIAukhQ-69Qnk5TzG4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>658601805797</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.hungreez</string>
+	<key>PROJECT_ID</key>
+	<string>hungreez-60aa9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hungreez-60aa9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:658601805797:ios:f5ad5af5bd23eac934910c</string>
+</dict>
+</plist>
