@@ -16,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> bodyPages = [ProfileScreen(), MenuScreen(), ChatbotScreen()];
 
   int pageIndex = 1;
-  CartController controller = Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
