@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
-  var cart = [].obs;
+  RxList cart = [].obs;
   RxInt total = 0.obs;
 
   void addItem(Order order) {
@@ -23,7 +23,12 @@ class CartController extends GetxController {
 class Order {
   String name;
   int price;
+  RxInt quantity;
   double time;
 
-  Order({required this.name, required this.price, required this.time});
+  Order(
+      {required this.name,
+      required this.price,
+      required this.quantity,
+      required this.time});
 }
