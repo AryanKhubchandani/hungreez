@@ -39,6 +39,7 @@ dependencies:
   firebase_core: ^2.7.0
   firebase_auth: ^4.2.9
   font_awesome_flutter: ^10.1.0
+  dialog_flowtter: ^0.3.3
 
 dev_dependencies:
   flutter_test:

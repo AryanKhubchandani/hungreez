@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hungreez/Models/Cart.dart';
 import 'package:hungreez/Views/CartScreen.dart';
 import 'package:hungreez/Views/ChatbotScreen.dart';
 import 'package:hungreez/Views/MenuScreen.dart';
@@ -13,7 +12,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Widget> bodyPages = [ProfileScreen(), MenuScreen(), ChatbotScreen()];
+  List<Widget> bodyPages = [
+    const ProfileScreen(),
+    const MenuScreen(),
+    const ChatbotScreen()
+  ];
 
   int pageIndex = 1;
 

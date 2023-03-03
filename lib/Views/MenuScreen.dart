@@ -10,7 +10,7 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  CartController controller = Get.put(CartController());
+  CartController controller = Get.find();
 
   @override
   void initState() {

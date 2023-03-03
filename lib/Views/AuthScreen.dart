@@ -9,8 +9,6 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  bool hasAccount = false;
-  bool isDesigner = false;
   final emailController = TextEditingController();
   final passController = TextEditingController();
   String _email = "";
@@ -114,30 +112,17 @@ class _AuthScreenState extends State<AuthScreen> {
                                         borderRadius: const BorderRadius.all(
                                             Radius.circular(25))),
                                     child: Center(
-                                        child: hasAccount
-                                            ? const Text(
-                                                "Register",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 18,
-                                                    fontWeight:
-                                                        FontWeight.w500),
-                                              )
-                                            : const Text(
-                                                "Login",
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 18,
-                                                    fontWeight:
-                                                        FontWeight.w500),
-                                              )),
+                                        child: const Text(
+                                      "Login",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500),
+                                    )),
                                   ),
                                   onTap: () {
-                                    if (hasAccount) {
-                                      SignUp(_email, _password);
-                                    } else {
-                                      SignIn(_email, _password);
-                                    }
+                                    SignIn(_email, _password);
+
                                     emailController.text = "";
                                     passController.text = "";
                                   },
@@ -148,21 +133,13 @@ class _AuthScreenState extends State<AuthScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                hasAccount
-                                    ? const Text("Already have an account?  ",
-                                        style: TextStyle(color: Colors.grey))
-                                    : const Text("Don't have an account?  ",
-                                        style: TextStyle(color: Colors.grey)),
+                                const Text("Don't have an account?  ",
+                                    style: TextStyle(color: Colors.grey)),
                                 GestureDetector(
-                                    child: hasAccount
-                                        ? Text("Login",
-                                            style: TextStyle(color: clr1))
-                                        : Text("Register",
-                                            style: TextStyle(color: clr1)),
+                                    child: Text("Register",
+                                        style: TextStyle(color: clr1)),
                                     onTap: () {
-                                      setState(() {
-                                        hasAccount = !hasAccount;
-                                      });
+                                      //TODO: Got to register page
                                     })
                               ],
                             )
