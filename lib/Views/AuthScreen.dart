@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 import 'package:hungreez/Views/HomeScreen.dart';
+import 'package:hungreez/Views/RegisterFormScreen.dart';
 import 'package:hungreez/constants.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -139,7 +141,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                     child: Text("Register",
                                         style: TextStyle(color: clr1)),
                                     onTap: () {
-                                      //TODO: Got to register page
+                                      Get.to(() => RegisterFormScreen());
                                     })
                               ],
                             )
@@ -155,13 +157,15 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    emailController.dispose();
+    passController.dispose();
+    super.dispose();
+  }
+
   Future SignIn(String email, String password) async {
     await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password);
-  }
-
-  Future SignUp(String email, String password) async {
-    await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password);
   }
 }
