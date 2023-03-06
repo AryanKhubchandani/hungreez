@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hungreez/Views/CartScreen.dart';
 import 'package:hungreez/Views/ChatbotScreen.dart';
-import 'package:hungreez/Views/MenuScreen.dart';
+import 'package:hungreez/Views/CafeScreen.dart';
 import 'package:hungreez/Views/ProfileScreen.dart';
 import 'package:hungreez/constants.dart';
 
@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> bodyPages = [
     const ProfileScreen(),
-    const MenuScreen(),
+    CafeScreen(),
     const ChatbotScreen()
   ];
 
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_box_rounded), label: "My Profile"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.menu_book_outlined), label: "Menu"),
+                icon: Icon(Icons.menu_book_outlined), label: "Cafe"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.question_answer), label: "Ask us"),
           ],

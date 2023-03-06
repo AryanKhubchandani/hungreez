@@ -38,15 +38,15 @@ class _RegisterFormScreenState extends State<RegisterFormScreen> {
                     children: <Widget>[
                       /// email
                       TextFormField(
-                          controller: emailController,
-                          decoration: const InputDecoration(
-                            labelText: 'Enter your email',
-                            hintText: 'ex: test@gmail.com',
-                          ),
-                          onChanged: (value) {
-                            _email = value;
-                          },
-                          validator: (value) {}),
+                        controller: emailController,
+                        decoration: const InputDecoration(
+                          labelText: 'Enter your email',
+                          hintText: 'ex: test@gmail.com',
+                        ),
+                        onChanged: (value) {
+                          _email = value;
+                        },
+                      ),
                       const SizedBox(height: 10),
 
                       /// password
@@ -59,7 +59,6 @@ class _RegisterFormScreenState extends State<RegisterFormScreen> {
                         onChanged: (value) {
                           _password = value;
                         },
-                        validator: (value) {},
                       ),
                       const SizedBox(height: 10),
 
@@ -74,7 +73,7 @@ class _RegisterFormScreenState extends State<RegisterFormScreen> {
                             _phoneNumber = value;
                           },
                           validator: (value) {}),
-                      SizedBox(height: 36),
+                      const SizedBox(height: 36),
 
                       /// login/register button
 
@@ -88,8 +87,8 @@ class _RegisterFormScreenState extends State<RegisterFormScreen> {
                                   color: clr1,
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(25))),
-                              child: Center(
-                                  child: const Text(
+                              child: const Center(
+                                  child: Text(
                                 "Register",
                                 style: TextStyle(
                                     color: Colors.white,
@@ -108,7 +107,7 @@ class _RegisterFormScreenState extends State<RegisterFormScreen> {
                                       horizontal: 8.0),
                                   child: Column(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "Enter the OTP received on the provided mobile number",
                                         style: TextStyle(color: Colors.black54),
                                       ),
@@ -127,7 +126,7 @@ class _RegisterFormScreenState extends State<RegisterFormScreen> {
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: Text(
+                                      child: const Text(
                                         "Cancel",
                                         style: TextStyle(color: Colors.black54),
                                       )),
