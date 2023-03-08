@@ -15,7 +15,7 @@ class CafeScreen extends StatelessWidget {
       body: GridView(
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 8, mainAxisSpacing: 12),
+            crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
         children: [
           GestureDetector(
             child: GridTile(
@@ -26,7 +26,7 @@ class CafeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: clr1,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Cafe Name"),
+              child: Text("Food Court"),
             )),
             onTap: () {
               cafeController.id.value = "0xff1";
@@ -42,7 +42,7 @@ class CafeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: clr1,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Cafe Name"),
+              child: Text("Darling Cafe"),
             )),
             onTap: () {
               cafeController.id.value = "0xff2";
@@ -58,7 +58,7 @@ class CafeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: clr1,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Cafe Name"),
+              child: Text("Arasan"),
             )),
             onTap: () {
               cafeController.id.value = "0xff3";
@@ -74,7 +74,7 @@ class CafeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: clr1,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Cafe Name"),
+              child: Text("GDN Canteen"),
             )),
             onTap: () {
               cafeController.id.value = "0xff4";
@@ -90,7 +90,7 @@ class CafeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: clr1,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Cafe Name"),
+              child: Text("KC Foods"),
             )),
             onTap: () {
               cafeController.id.value = "0xff5";
@@ -106,7 +106,7 @@ class CafeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: clr1,
                   borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Cafe Name"),
+              child: Text("PRP Canteen"),
             )),
             onTap: () {
               cafeController.id.value = "0xff6";

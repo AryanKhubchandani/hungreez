@@ -41,6 +41,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   dialog_flowtter: ^0.3.3
   twilio_flutter: ^0.0.9
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
