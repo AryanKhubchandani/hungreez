@@ -10,6 +10,14 @@ class MenuItem {
     return Card(
       elevation: 2.0,
       child: ListTile(
+        leading: Container(
+          height: 40,
+          width: 40,
+          decoration: BoxDecoration(
+              //TODO: Network image for dishes
+              color: Colors.grey,
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+        ),
         title: Text(name),
         subtitle: Text(price.toString()),
         trailing: IconButton(

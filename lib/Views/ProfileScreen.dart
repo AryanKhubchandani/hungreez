@@ -20,11 +20,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        child: Icon(Icons.logout_rounded, color: clr1),
+        child: const Icon(Icons.logout_rounded, color: clr1),
         onPressed: () {
           controller.cart.value = [];
           FirebaseAuth.instance.signOut();
         },
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: 24),
+          GestureDetector(
+            child: CircleAvatar(
+              minRadius: 80,
+              backgroundColor: Colors.grey,
+              child: Icon(
+                Icons.account_circle,
+                size: 36,
+                color: Colors.white,
+              ),
+            ),
+            onTap: () {
+              //TODO: uplaod/change and display profile image
+            },
+          ),
+          SizedBox()
+        ],
       ),
     );
   }

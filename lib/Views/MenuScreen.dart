@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:hungreez/Models/Cafe.dart';
+import 'package:hungreez/Controller/CafeController.dart';
 import 'package:hungreez/Models/MenuModel.dart';
 import 'package:hungreez/Widgets/MenuItem.dart';
 import 'package:hungreez/constants.dart';
