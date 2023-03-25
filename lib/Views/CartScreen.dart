@@ -30,10 +30,10 @@ class _CartScreenState extends State<CartScreen> {
             alignment: Alignment.topLeft,
             width: double.infinity,
             padding: const EdgeInsets.fromLTRB(16, 42, 12, 16),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: clr1,
                 borderRadius:
-                    const BorderRadius.only(bottomRight: Radius.circular(20))),
+                    BorderRadius.only(bottomRight: Radius.circular(20))),
             child: Row(
               children: [
                 const Text("Your order",
@@ -63,7 +63,26 @@ class _CartScreenState extends State<CartScreen> {
                       controller.cart[idx].time,
                       idx);
                 }),
-          )
+          ),
+          const SizedBox(height: 24),
+          controller.total.value != 0
+              ? Container(
+                  height: 70,
+                  width: 150,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                      color: clr1,
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  child: const Text(
+                    "Proceed with Payment",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
+                  ),
+                )
+              : const SizedBox()
         ],
       ),
     );

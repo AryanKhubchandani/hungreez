@@ -3,10 +3,13 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:hungreez/Controller/CafeController.dart';
 import 'package:hungreez/Models/MenuModel.dart';
+import 'package:hungreez/Views/CartScreen.dart';
 import 'package:hungreez/Widgets/MenuItem.dart';
 import 'package:hungreez/constants.dart';
 
 class MenuScreen extends StatefulWidget {
+  const MenuScreen({super.key});
+
   @override
   State<MenuScreen> createState() => _MenuScreenState();
 }
@@ -24,6 +27,30 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          child: const Icon(Icons.menu_outlined, color: clr1),
+          onTap: () {
+            ///TODO: Drawer open
+          },
+        ),
+        title: Row(
+          children: [
+            const Expanded(child: SizedBox(width: 1)),
+            GestureDetector(
+              child: const Icon(
+                Icons.shopping_cart_outlined,
+                color: clr1,
+                size: 22,
+              ),
+              onTap: () {
+                Get.to(() => const CartScreen());
+              },
+            )
+          ],
+        ),
+      ),
       body: menu.length != 0
           ? ListView.builder(
               itemCount: menu.length,
@@ -31,7 +58,7 @@ class _MenuScreenState extends State<MenuScreen> {
               itemBuilder: (context, idx) {
                 return MenuItem().buildItem(menu[idx].name, menu[idx].price);
               })
-          : Center(child: CircularProgressIndicator(color: clr1)),
+          : const Center(child: CircularProgressIndicator(color: clr1)),
     );
   }
 
