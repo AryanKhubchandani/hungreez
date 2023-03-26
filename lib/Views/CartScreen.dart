@@ -21,6 +21,12 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -65,7 +71,7 @@ class _CartScreenState extends State<CartScreen> {
                 }),
           ),
           const SizedBox(height: 24),
-          controller.total.value != 0
+          Obx(() => controller.total.value != 0
               ? Container(
                   height: 70,
                   width: 150,
@@ -82,7 +88,7 @@ class _CartScreenState extends State<CartScreen> {
                         fontWeight: FontWeight.w600),
                   ),
                 )
-              : const SizedBox()
+              : const SizedBox())
         ],
       ),
     );

@@ -2,117 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hungreez/Controller/CafeController.dart';
 import 'package:hungreez/Models/Cart.dart';
-import 'package:hungreez/Views/MenuScreen.dart';
-import 'package:hungreez/constants.dart';
+import 'package:hungreez/Widgets/CafeTile.dart';
 
 class CafeScreen extends StatelessWidget {
   CartController cartController = Get.find();
   CafeController cafeController = Get.put(CafeController(id: "".obs, name: ""));
 
+  CafeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView(
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
         children: [
-          GestureDetector(
-            child: GridTile(
-                child: Container(
-              height: 150,
-              width: 150,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: clr1,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Food Court"),
-            )),
-            onTap: () {
-              cafeController.id.value = "0xff1";
-              Get.to(() => MenuScreen());
-            },
-          ),
-          GestureDetector(
-            child: GridTile(
-                child: Container(
-              height: 150,
-              width: 150,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: clr1,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Darling Cafe"),
-            )),
-            onTap: () {
-              cafeController.id.value = "0xff2";
-              Get.to(() => MenuScreen());
-            },
-          ),
-          GestureDetector(
-            child: GridTile(
-                child: Container(
-              height: 150,
-              width: 150,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: clr1,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("Arasan"),
-            )),
-            onTap: () {
-              cafeController.id.value = "0xff3";
-              Get.to(() => MenuScreen());
-            },
-          ),
-          GestureDetector(
-            child: GridTile(
-                child: Container(
-              height: 150,
-              width: 150,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: clr1,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("GDN Canteen"),
-            )),
-            onTap: () {
-              cafeController.id.value = "0xff4";
-              Get.to(() => MenuScreen());
-            },
-          ),
-          GestureDetector(
-            child: GridTile(
-                child: Container(
-              height: 150,
-              width: 150,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: clr1,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("KC Foods"),
-            )),
-            onTap: () {
-              cafeController.id.value = "0xff5";
-              Get.to(() => MenuScreen());
-            },
-          ),
-          GestureDetector(
-            child: GridTile(
-                child: Container(
-              height: 150,
-              width: 150,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: clr1,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Text("PRP Canteen"),
-            )),
-            onTap: () {
-              cafeController.id.value = "0xff6";
-              Get.to(() => MenuScreen());
-            },
-          ),
+          CafeTile().buildTile("Food Court", "0xff1"),
+          CafeTile().buildTile("Darling Cafe", "0xff2"),
+          CafeTile().buildTile("Arasan", "0xff3"),
+          CafeTile().buildTile("GDN Canteen", "0xff4"),
+          CafeTile().buildTile("KC Foods", "0xff5"),
+          CafeTile().buildTile("PRP Canteen", "0xff6"),
         ],
       ),
     );
