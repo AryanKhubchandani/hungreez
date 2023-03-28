@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:hungreez/Models/Cart.dart';
+import 'package:hungreez/Controller/CartController.dart';
 import 'package:hungreez/constants.dart';
 
 class ProfileScreen extends StatefulWidget {

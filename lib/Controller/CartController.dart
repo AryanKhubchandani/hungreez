@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hungreez/Models/Order.dart';
 
 class CartController extends GetxController {
   RxList cart = [].obs;

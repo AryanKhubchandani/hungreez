@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hungreez/Models/Cart.dart';
+import 'package:hungreez/Controller/CartController.dart';
+import 'package:hungreez/Views/OrderPickupScreen.dart';
 import 'package:hungreez/Widgets/CartItem.dart';
 import 'package:hungreez/constants.dart';
 
@@ -18,12 +19,6 @@ class _CartScreenState extends State<CartScreen> {
   void initState() {
     controller = Get.find();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
   }
 
   @override
@@ -72,22 +67,27 @@ class _CartScreenState extends State<CartScreen> {
           ),
           const SizedBox(height: 24),
           Obx(() => controller.total.value != 0
-              ? Container(
-                  height: 70,
-                  width: 150,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      color: clr1,
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
-                  child: const Text(
-                    "Proceed with Payment",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600),
+              ? GestureDetector(
+                onTap: (){
+                  Get.to(()=>OrderPickupScreen());
+                },
+                child: Container(
+                    height: 70,
+                    width: 150,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        color: clr1,
+                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    child: const Text(
+                      "Proceed with Payment",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
-                )
+              )
               : const SizedBox())
         ],
       ),
