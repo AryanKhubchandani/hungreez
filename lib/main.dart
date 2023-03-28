@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hungreez/Models/Cart.dart';
+import 'package:hungreez/Controller/CartController.dart';
 import 'package:hungreez/Views/AuthScreen.dart';
 
 void main() async {

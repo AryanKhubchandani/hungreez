@@ -21,7 +21,6 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   void initState() {
     getMenuItems();
-    cafeController.dispose();
     super.initState();
   }
 

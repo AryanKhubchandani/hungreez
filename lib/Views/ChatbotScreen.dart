@@ -1,11 +1,12 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/foundation.dart';
+import 'package:hungreez/Models/Order.dart';
 import 'package:hungreez/Widgets/Chat.dart';
 import 'package:hungreez/constants.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hungreez/Models/Cart.dart';
+import 'package:hungreez/Controller/CartController.dart';
 
 class ChatbotScreen extends StatefulWidget {
   const ChatbotScreen({Key? key}) : super(key: key);

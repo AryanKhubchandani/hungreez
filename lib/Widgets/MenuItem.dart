@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hungreez/Models/Cart.dart';
+import 'package:hungreez/Controller/CartController.dart';
+import 'package:hungreez/Models/Order.dart';
 import 'package:hungreez/constants.dart';
 
 class MenuItem {
@@ -15,7 +16,7 @@ class MenuItem {
           leading: Container(
             height: 40,
             width: 40,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 //TODO: Network image for dishes
                 color: Colors.grey,
                 borderRadius: BorderRadius.all(Radius.circular(10))),

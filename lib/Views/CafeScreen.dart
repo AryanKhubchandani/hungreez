@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hungreez/Controller/CafeController.dart';
-import 'package:hungreez/Models/Cart.dart';
+import 'package:hungreez/Controller/CartController.dart';
 import 'package:hungreez/Widgets/CafeTile.dart';
 
 class CafeScreen extends StatelessWidget {
