@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hungreez/Controller/CartController.dart';
+import 'package:hungreez/Controller/PickupController.dart';
 import 'package:hungreez/Views/OrderPickupScreen.dart';
 import 'package:hungreez/Widgets/CartItem.dart';
 import 'package:hungreez/constants.dart';
@@ -14,10 +15,12 @@ class CartScreen extends StatefulWidget {
 
 class _CartScreenState extends State<CartScreen> {
   late CartController controller;
+  late PickupController pickupController;
 
   @override
   void initState() {
     controller = Get.find();
+    pickupController = Get.find();
     super.initState();
   }
 
@@ -62,13 +65,15 @@ class _CartScreenState extends State<CartScreen> {
                       controller.cart[idx].name,
                       controller.cart[idx].price,
                       controller.cart[idx].time,
-                      idx);
+                      idx, true);
                 }),
           ),
           const SizedBox(height: 24),
-          Obx(() => controller.total.value != 0
+          Obx(() => (controller.total.value != 0 && !controller.isOrderLive.value)
               ? GestureDetector(
                 onTap: (){
+                  pickupController.sendOrderDetails(controller);
+                  controller.makeOrderLive();
                   Get.to(()=>OrderPickupScreen());
                 },
                 child: Container(

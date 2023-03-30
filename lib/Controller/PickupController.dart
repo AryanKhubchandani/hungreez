@@ -3,27 +3,11 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:hungreez/Controller/CartController.dart';
 
-enum OrderStatus {ORDERING ,AWAIT_CONFIRM, MAKING, READY_FOR_PICKUP}
+enum OrderStatus {AWAIT_CONFIRM, MAKING, READY_FOR_PICKUP}
 
 class PickupController extends GetxController {
-  Rx<OrderStatus> status;
+  Rx<OrderStatus> status = OrderStatus.AWAIT_CONFIRM.obs;
   Timer? _timer;
-
-  PickupController({required this.status});
-
-  @override
-  void onInit() async {
-    CartController cartController = Get.find();
-    await sendOrderDetails(cartController);
-    polling();
-    super.onInit();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-    _timer?.cancel();
-  }
 
   void advanceStatus(Rx<OrderStatus> status) {
     if (status.value == OrderStatus.AWAIT_CONFIRM) {

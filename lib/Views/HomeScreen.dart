@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: GestureDetector(
-            child: Icon(Icons.menu_outlined, color: clr1),
+            child: const Icon(Icons.menu_outlined, color: clr1),
             onTap: () {
               ///TODO: Drawer open
             },
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const Expanded(child: SizedBox(width: 1)),
               GestureDetector(
-                child: Icon(
+                child: const Icon(
                   Icons.shopping_cart_outlined,
                   color: clr1,
                   size: 22,

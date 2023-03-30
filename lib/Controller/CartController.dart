@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:hungreez/Models/Order.dart';
 
@@ -22,13 +23,14 @@ class CartController extends GetxController {
   }
 
   void makeOrderLive() {
+    if (kDebugMode) print("Order is Live!");
     isOrderLive.value = true;
   }
 
   void reset() {
     cart.clear();
     total.value = 0;
-    isOrderLive.value = true;
+    isOrderLive.value = false;
   }
 }
 
