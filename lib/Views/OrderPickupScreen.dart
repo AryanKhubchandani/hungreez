@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 import 'package:hungreez/Controller/CartController.dart';
 import 'package:hungreez/Controller/PickupController.dart';
+import 'package:hungreez/Controller/PollingController.dart';
 import 'package:hungreez/Views/HomeScreen.dart';
 import 'package:hungreez/Widgets/CartItem.dart';
 import 'package:hungreez/constants.dart';
@@ -9,7 +12,7 @@ import 'package:hungreez/constants.dart';
 class OrderPickupScreen extends StatelessWidget {
   CartController cartController = Get.find();
   PickupController pickupController = Get.find();
-
+  PollingController pollingController = Get.put(PollingController());
   OrderPickupScreen({super.key});
 
   @override
@@ -20,7 +23,7 @@ class OrderPickupScreen extends StatelessWidget {
         children: [
           const Center(child: Text("Your Order Status:", textAlign: TextAlign.center)),
           const SizedBox(height: 8),
-          Text(pickupController.status.value.toString(), style: const TextStyle(color: clr1, fontSize: 20, letterSpacing: 1)),
+          Obx(()=> Text(pickupController.status.value.toString(), style: const TextStyle(color: clr1, fontSize: 20, letterSpacing: 1))),
           const SizedBox(height: 24),
           ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -34,7 +37,7 @@ class OrderPickupScreen extends StatelessWidget {
                     idx, false);
               }),
           const SizedBox(height: 24),
-          GestureDetector(
+          Obx(() => (pickupController.status.value == OrderStatus.READY_FOR_PICKUP) ? GestureDetector(
             child: Container(
               height: 70,
               width: 150,
@@ -52,14 +55,19 @@ class OrderPickupScreen extends StatelessWidget {
               ),
             ),
             onTap: (){
+              deleteOrder(FirebaseAuth.instance.currentUser!.uid);
               cartController.reset();
               pickupController.status.value = OrderStatus.AWAIT_CONFIRM;
               Get.offAll(()=>HomeScreen());
             },
-          )
+          ) : SizedBox() )
         ],
       ),
     );
+  }
+
+  Future<void> deleteOrder(String uid) async {
+    var response = await http.delete(Uri.parse("$baseurl/api/order/$uid"));
   }
 }
 

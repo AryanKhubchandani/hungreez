@@ -6,7 +6,7 @@ import 'package:hungreez/Widgets/CafeTile.dart';
 
 class CafeScreen extends StatelessWidget {
   CartController cartController = Get.find();
-  CafeController cafeController = Get.put(CafeController(id: "".obs, name: ""));
+  CafeController cafeController = Get.find();
 
   CafeScreen({super.key});
 

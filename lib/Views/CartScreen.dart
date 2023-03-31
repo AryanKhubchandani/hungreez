@@ -72,9 +72,10 @@ class _CartScreenState extends State<CartScreen> {
           Obx(() => (controller.total.value != 0 && !controller.isOrderLive.value)
               ? GestureDetector(
                 onTap: (){
-                  pickupController.sendOrderDetails(controller);
-                  controller.makeOrderLive();
-                  Get.to(()=>OrderPickupScreen());
+                  pickupController.sendOrderDetails(controller).then((value)  {
+                      controller.makeOrderLive();
+                      Get.to(()=>OrderPickupScreen());
+                  });
                 },
                 child: Container(
                     height: 70,

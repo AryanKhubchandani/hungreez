@@ -44,18 +44,18 @@ class _AuthScreenState extends State<AuthScreen> {
                         Center(
                           child: Column(
                             children: <Widget>[
-                              SizedBox(height: 65),
+                              const SizedBox(height: 65),
                               Image.asset(
                                 'assets/images/intro.png',
                                 height: 250,
                               ),
-                              SizedBox(height: 30),
+                              const SizedBox(height: 30),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    Text("Hungreez",
+                    const Text("Hungreez",
                         style: TextStyle(
                             color: clr1, letterSpacing: 3, fontSize: 24)),
                     Form(
@@ -86,7 +86,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               },
                               validator: (value) {},
                             ),
-                            SizedBox(height: 36),
+                            const SizedBox(height: 36),
 
                             /// login/register button
 
@@ -97,12 +97,12 @@ class _AuthScreenState extends State<AuthScreen> {
                                   child: Container(
                                     height: 55,
                                     width: double.infinity,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         color: clr1,
-                                        borderRadius: const BorderRadius.all(
+                                        borderRadius: BorderRadius.all(
                                             Radius.circular(25))),
-                                    child: Center(
-                                        child: const Text(
+                                    child: const Center(
+                                        child: Text(
                                       "Login",
                                       style: TextStyle(
                                           color: Colors.white,
@@ -126,7 +126,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                 const Text("Don't have an account?  ",
                                     style: TextStyle(color: Colors.grey)),
                                 GestureDetector(
-                                    child: Text("Register",
+                                    child: const Text("Register",
                                         style: TextStyle(color: clr1)),
                                     onTap: () {
                                       Get.to(() => RegisterFormScreen());
